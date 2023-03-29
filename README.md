@@ -7,9 +7,19 @@ Com _lib-ysAsync_ podemos esperar por uma resposta, e a utilizar depois de a rec
 
 > Exemplo de uso: 
 ```
-const a = new ysAsync()
+var path = __dirname;
+const fs = require('fs');
+function lerPasta(req, res) {
+  var matriz = []
+  fs.readdir(path,function(err,file){
+    file.forEach(arquivo => matriz.push(arquivo) )
+    res.res = matriz
+  })
+}
 
-a.await(false, lerPasta).then(resposta => {
+const ys = new ysAsync()
+
+ys.await(false, lerPasta).then(resposta => {
   console.log('Essa é a resposta do then 1: ' + resposta)
   return 'retorno  do then 1'
 }).then(resposta => {
@@ -20,13 +30,13 @@ a.await(false, lerPasta).then(resposta => {
 
 var variavelForaDoThen = null
 
-a.then(esse => {
+ys.then(esse => {
   variavelForaDoThen = esse
   console.log('Essa é a resposta do then 3: ' +  esse)
   return 'retorno  do then 3'
 })
 
-a.then(esse => {
+ys.then(esse => {
   console.log('Essa é a resposta do then 4: variavel Fora Do Then com valor do then anterior -> ' +  variavelForaDoThen)
 })
 
