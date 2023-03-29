@@ -3,7 +3,7 @@
 > Sobre
 
 _lib-ysAsync_ é uma lib criada para suprir a falta do 'await' em funções antigas do node, como a v5.0.0 <br>
-Com _lib-ysAsync_ podemos esperar por uma resposta, e a utilizar depois de a receber, como uma promise. A diferença é a posibilidade de dar continuidade no cadeia de _then_ de maneira não sequencial. Um _then_ não precisa necessariamente chamar outro. Ao distanciar um objeto da lib-ysAsync e chamar a propriedade _await_ para receber a nossa resposta, podemos decidir se queremos fazer um tratamento sequencial adicionando novos _then_, ou depois, chamando o mesmo objeto distânciado com a funcionalidade 'then'.
+Com _lib-ysAsync_ podemos esperar por uma resposta, e a utilizar depois de a receber, como uma promise. Temos a posibilidade de dar continuidade no cadeia de _then_ de maneira não sequencial. Um _then_ não precisa necessariamente chamar outro. Ao distanciar um objeto da lib-ysAsync e chamar a propriedade _await_ para receber a nossa resposta, podemos decidir se queremos fazer um tratamento sequencial adicionando novos _then_, ou depois, chamando o mesmo objeto distânciado com a funcionalidade 'then'.
 
 > Exemplo de uso: 
 ```
